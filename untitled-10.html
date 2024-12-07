@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yemek Tarifleri</title>
+    <style>
+        body{
+            background:url(https://th.bing.com/th/id/OIP.lk8WYoo2tQk8sTODVRQleQHaLH?rs=1&pid=ImgDetMain);
+            background-attachment:fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1  style="text-align: center;">Yemek Tarifleri</h1>
+    <div class="container">
+        <div class="dish" style="text-align: center;">
+            <img src="https://www.unileverfoodsolutions.com.tr/dam/global-ufs/mcos/TURKEY/calcmenu/recipes/TR-recipes/desserts-&-bakery/kar%C4%B1%C5%9F%C4%B1k-pizza/main-header.jpg" alt="Pizza" onclick="showRecipe('pizza')" width="300" height="200" >
+            <p>Pizza</p>
+        </div>
+        <div class="dish" style="text-align: center;">
+            <img src="https://cdn.yemek.com/mnresize/1250/833/uploads/2021/11/karnabaharli-ragu-soslu-makarna-yemekcom.jpg" alt="Makarna" onclick="showRecipe('pasta')" width="300" height="200">
+            <p>Makarna</p>
+        </div>
+        <div class="dish" style="text-align: center;">
+            <img src="https://th.bing.com/th/id/OIP.w8Ll1Vc7zSj4-Mm6gCarCwHaD2?rs=1&pid=ImgDetMain" alt="Salata" onclick="showRecipe('salad')" width="300" height="200">
+            <p>Salata</p>
+        </div>
+    </div>
+
+    <div id="recipe" class="recipe" style="text-align: center;">
+        <h2>Tarif</h2>
+        <p id="recipe-text"></p>
+        <button onclick="hideRecipe()">Kapat</button>
+    </div>
+
+    <script>
+        function showRecipe(dish) {
+            const recipes = {
+                pizza: "Pizza tarifi: Un, su, tuz ve mayadan hamur yapın. Üzerine domates sosu, peynir ve malzemeler ekleyin.",
+                pasta: "Makarna tarifi: Makarna haşlayın ve üzerine sos ekleyin. İsterseniz sebze veya et ekleyebilirsiniz.",
+                salad: "Salata tarifi: Taze sebzeleri doğrayın, zeytinyağı ve limon ekleyin."
+            };
+            document.getElementById('recipe-text').innerText = recipes[dish];
+            document.getElementById('recipe').style.display = 'block';
+        }
+
+        function hideRecipe() {
+            document.getElementById('recipe').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
